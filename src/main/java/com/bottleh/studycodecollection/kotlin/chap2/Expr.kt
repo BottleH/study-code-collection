@@ -53,7 +53,3 @@ fun readNumber(reader: BufferedReader) {
 
     println(number)
 }
-
-fun main() {
-    println("Kotlin" in "Java".."Scala")
-}
