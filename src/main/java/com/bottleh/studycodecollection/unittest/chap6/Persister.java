@@ -22,9 +22,9 @@ public class Persister {
     }
 
     public void applyUpdate(String directoryName, FileUpdate update) {
-        String filePath = Paths.get(directoryName, update.getFileName()).toString();
+        String filePath = Paths.get(directoryName, update.fileName()).toString();
         try {
-            Files.write(Paths.get(filePath), update.getNewContent().getBytes());
+            Files.write(Paths.get(filePath), update.newContent().getBytes());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

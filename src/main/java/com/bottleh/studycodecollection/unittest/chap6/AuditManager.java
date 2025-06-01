@@ -21,11 +21,11 @@ public class AuditManager {
 
         int currentFileIndex = files.length - 1;
         FileContent currentFile = files[currentFileIndex];
-        List<String> lines = Arrays.asList(currentFile.getLines());
+        List<String> lines = Arrays.asList(currentFile.lines());
 
         if (lines.size() < maxEntriesPerFile) {
             lines.add(newRecord);
-            return new FileUpdate(currentFile.getFileName(), String.join("\r\n", lines));
+            return new FileUpdate(currentFile.fileName(), String.join("\r\n", lines));
         }
 
         return new FileUpdate("audit_" + currentFileIndex + 1 + ".txt", newRecord);
